@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Regular Expressions</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
 </head>
 <body>
     <header class="header">
@@ -24,21 +25,21 @@
                         <span class="form__error">Имя должно начинаться с заглавной буквы и сотстоять из букв кириллицы, а также может содержать тире(-)</span>
                     </div>
                     <div class="form__field">
-                        <input pattern="^(?![-\.])((-|.)?\w+)+@([a-zA-Z0-9](-|\.)?)+([a-zA-Z0-9])" class="form__input" type="email" name="name" placeholder="E-Mail" />
+                        <input required pattern="^(?![-\._])((-|.|_)?[A-Za-z0-9]+)+@([a-zA-Z0-9](-|.)?)+([a-zA-Z0-9])" minlength="2" maxlength="255" class="form__input" type="email" name="name" placeholder="E-Mail" />
                         <span class="form__error">e-mail в формате: sega@yandex.ru</span>
                     </div>
                     <div class="form__field">
-                        <input pattern="^(\+7|8)(-*\s*\(*\d\)*){10}" class="form__input" type="tel" name="name" placeholder="Телефон" minlength="11" />
+                        <input pattern="^(\+7|8)(\(((\d){3})\)|(-*\s*\d){3})(\s*-*\d+\s*-*){7}" class="form__input" type="tel" name="name" placeholder="Телефон" minlength="11" maxlength="255" />
                         <span class="form__error">телефон в формате: +7 (123) 456-78-90</span>
                     </div>
                     <div class="form__field">
-                        <input pattern="^(https?:\/\/)(www\.)?((\d{3}\.?){4}|([a-z0-9](-|\.)?)+([a-z0-9]))(:\d{2,5})?\/?(\/?[a-z0-9])*(#?[a-z0-9])*" class="form__input" type="url" name="name"  placeholder="Ваш сайт" />
+                        <input minlength="2" maxlength="255" pattern="^(https?:\/\/)((www\.)?(([a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9])+\.)+[a-zA-Z]{2,6}|(\d{3}\.?){3}(\d{3}))(:\d{2,5})?(\/?|(\/[a-z0-9]+)*(#?[a-z0-9])*)" class="form__input" type="url" name="name"  placeholder="Ваш сайт" />
                         <span class="form__error">URL в формате: http://mysite.ru</span>
                     </div>
                     <button class="form__button" type="submit">Отправить</button>
                 </fieldset>
             </form>
         </div>
-    </main>     
+    </main>
 </body>
 </html>
